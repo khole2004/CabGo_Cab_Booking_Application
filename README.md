@@ -201,4 +201,5 @@ The database migration automatically seeds realistic test accounts:
   - `GET /api/users/verify-coupon/{code}`: Validate promo code# p r o j e c t . m a i n  
  # c a b g o . a p p l i c a t i o n  
  # c a b g o n  
+ # c a b g o . a p p l i c a t i o n  
  
