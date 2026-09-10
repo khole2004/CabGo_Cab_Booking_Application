@@ -1,4 +1,23 @@
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8088/api';
+/**
+ * Normalizes the API Base URL for both local dev proxy and cloud deployments.
+ * Supports VITE_API_BASE_URL and VITE_API_URL, defaulting to '/api'.
+ */
+export const normalizeApiBaseUrl = (rawUrl) => {
+  if (!rawUrl || typeof rawUrl !== 'string' || rawUrl.trim() === '') {
+    return '/api';
+  }
+  let normalized = rawUrl.trim().replace(/\/+$/, '');
+  if (normalized.startsWith('http://') || normalized.startsWith('https://')) {
+    if (!normalized.endsWith('/api')) {
+      normalized = `${normalized}/api`;
+    }
+  }
+  return normalized;
+};
+
+export const API_BASE_URL = normalizeApiBaseUrl(
+  import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || '/api'
+);
 
 export const ENDPOINTS = {
   AUTH: {

@@ -1,0 +1,24 @@
+# Build output
+backend/target/
+target/
+frontend/dist/
+dist/
+
+# Node dependencies & caches
+frontend/node_modules/
+node_modules/
+.vite/
+.npm
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Environment & Logs
+*.log
+.env
+.env.local
+.env.*.local
